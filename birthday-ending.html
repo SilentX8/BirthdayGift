@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08090b" />
+    <title>Gotham Birthday Files — Levi</title>
+    <link rel="stylesheet" href="birthday-ending.css" />
+  </head>
+  <body class="birthday-ending-page">
+    <section
+      id="birthdayFiles"
+      class="birthday-files"
+      aria-labelledby="birthdayFilesTitle"
+    >
+      <div class="birthday-balloons" aria-hidden="true">
+        <span>🎈</span>
+        <span>🎈</span>
+        <span>🎈</span>
+        <span>🎈</span>
+        <span>🎈</span>
+        <span>🎈</span>
+        <span>🎈</span>
+        <span>🎈</span>
+      </div>
+      <div class="birthday-files-header">
+        <p class="kicker">GOTHAM CITY // INTERCEPTED TRANSMISSIONS</p>
+        <h2 id="birthdayFilesTitle">
+          SIX FILES. SIX PEOPLE. ONE VERY LOVED BATMAN.
+        </h2>
+        <p>CLASSIFIED BIRTHDAY WISHES — DECRYPTED</p>
+      </div>
+      <div id="birthdayFileGrid" class="birthday-file-grid"></div>
+      <div class="birthday-files-final">
+        <p>GOTHAM IS LUCKY TO HAVE YOU.</p>
+        <h2>HAPPY BIRTHDAY, LEVI.</h2>
+      </div>
+    </section>
+
+    <script>
+      const birthdayMessages = [
+        {
+          sender: "From Burd",
+          message:
+            "Happy birthday Levi! Hope you farm Maepletea, sunny and silent today and have an amazing birthday!",
+        },
+        {
+          sender: "From Mae",
+          message: "Happy birthday, i hope u go bald ❤️",
+        },
+        {
+          sender: "From Abdo",
+          message:
+            "Happy birthday levi, wishing u an amazing year ahead and may your aim get sharper.",
+        },
+        {
+          sender: "From Sunny",
+          message:
+            "Happyyy birthday Levi, enjoy ur birthday to the max. Don’t let anyone ruin ur day tho, I hope u get farmed by a random in bedwars to the point where u start rage quitting.",
+        },
+        {
+          sender: "From Masik",
+          message: "I love you and that you're the goat bro.",
+        },
+        {
+          sender: "From Nena",
+          message: "Pending...",
+        },
+      ];
+
+      const grid = document.getElementById("birthdayFileGrid");
+      birthdayMessages.forEach((file, index) => {
+        const article = document.createElement("article");
+        article.className = "birthday-file";
+        article.style.setProperty("--file-index", index);
+
+        const header = document.createElement("div");
+        header.className = "birthday-file-heading";
+        const fileId = document.createElement("span");
+        fileId.textContent = `GCPD INTERCEPT // 00${index + 1}`;
+        const status = document.createElement("span");
+        status.textContent = "FOR LEVI";
+        header.append(fileId, status);
+
+        const sender = document.createElement("h3");
+        sender.textContent = file.sender;
+        const message = document.createElement("p");
+        message.textContent = file.message;
+        article.append(header, sender, message);
+        grid.appendChild(article);
+      });
+    </script>
+  </body>
+</html>
